@@ -3,7 +3,7 @@
   --main-gray: #8a8ca5;
   --light-gray: #f0f0f0;
   --main-blue: #0074d9;
-  --sec-blue: #7fdbff;
+  --sec-blue: #60c0e6;
   --main-green: #3d9970;
   --sec-green: rgb(100, 255, 160);
 }
@@ -71,11 +71,11 @@ button {
   border: none;
   cursor: pointer;
   text-align: center;
-  transition: background 250ms ease-in-out, transform 150ms ease;
+  transition: background 150ms ease-in-out, transform 150ms ease;
 }
 
 button:hover {
-  background: var(--main-green);
+  background: var(--sec-blue);
 }
 
 button:active {
