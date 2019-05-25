@@ -44,7 +44,7 @@ h1 + p {
     border-bottom: 1px solid var(--sec-blue);
 }
 
-.list-desc {
+.listName {
     padding: 20px 0;
 }
 
@@ -86,7 +86,7 @@ ul {
 }
 
 li {
-    padding: 10px 0;
+    padding: 10px;
     margin-bottom: 4px;
     background: var(--light-gray);
 }
