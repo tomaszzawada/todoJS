@@ -1,28 +1,30 @@
 :root {
-    --main-black: #1f202b;
-    --main-gray: #8a8ca5;
-    --light-gray: #f0f0f0;
-    --main-blue: #0074D9;
-    --sec-blue: #7FDBFF;
-    --main-green: #3D9970;
-    --sec-green: rgb(100, 255, 160);
-  }  
+  --main-black: #1f202b;
+  --main-gray: #8a8ca5;
+  --light-gray: #f0f0f0;
+  --main-blue: #0074d9;
+  --sec-blue: #7fdbff;
+  --main-green: #3d9970;
+  --sec-green: rgb(100, 255, 160);
+}
 
-*,*:before,*:after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: var(--main-black);
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--main-black);
 }
 
 body {
-    padding-top: 40px;
+  padding-top: 40px;
 }
 
 .wrapper {
@@ -32,63 +34,61 @@ body {
 }
 
 h1 {
-    font-weight: 900;
-    font-size: 2.5rem;
+  font-weight: 900;
+  font-size: 2.5rem;
 }
 
 h1 + p {
-    font-size: 1.2em;
-    font-weight: 300;
-    margin: 20px 0 60px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--sec-blue);
+  font-size: 1.2em;
+  font-weight: 300;
+  margin: 20px 0 60px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--sec-blue);
 }
 
 .listName {
-    padding: 20px 0;
+  padding: 20px 0;
 }
 
-input, button {
-    font-family: inherit;
-    font-size: 0.875rem;
-    text-decoration: none;
-    padding: .6em 1em;
-    outline: 0;
-    border-radius: 2px;
+input,
+button {
+  font-family: inherit;
+  font-size: 0.875rem;
+  text-decoration: none;
+  padding: 0.6em 1em;
+  outline: 0;
+  border-radius: 2px;
 }
 
 input {
-    border: 1px solid var(--sec-blue);
-    margin-right: 20px;
+  border: 1px solid var(--sec-blue);
+  margin-right: 20px;
 }
 
 button {
-    background: var(--main-blue);
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    transition: background 250ms ease-in-out, 
-                transform 150ms ease;
+  background: var(--main-blue);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 150ms ease;
 }
 
 button:hover {
-    background: var(--main-green);
+  background: var(--main-green);
 }
 
 button:active {
-    transform: scale(0.99);
+  transform: scale(0.99);
 }
 
 ul {
-    margin: 20px 0;
-    list-style: none;
+  margin: 20px 0;
+  list-style: none;
 }
 
 li {
-    padding: 10px;
-    margin-bottom: 4px;
-    background: var(--light-gray);
+  padding: 10px;
+  margin-bottom: 4px;
+  background: var(--light-gray);
 }
-
-
