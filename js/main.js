@@ -4,7 +4,18 @@ const btnListName = document.querySelector("button.btnListName");
 const inputAdd = document.querySelector("input.inputAdd");
 const btnAdd = document.querySelector("button.btnAdd");
 const listDiv = document.querySelector(".list");
-const listUl = listDiv.querySelector("ul");
+const listUl = document.querySelector(".ulList");
+
+// Removing Item from List
+listUl.addEventListener("click", e => {
+  if (e.target.tagName == "BUTTON") {
+    if (e.target.className == "remove") {
+      let li = event.target.parentNode;
+      let ul = li.parentNode;
+      ul.removeChild(li);
+    }
+  }
+});
 
 // Change List Name
 function changeListName() {
@@ -23,6 +34,18 @@ inputListName.addEventListener("keyup", e => {
     changeListName();
   }
 });
+
+// Add remove button to list items
+function addLiBtn(li) {
+  let remove = document.createElement("button");
+  remove.className = "remove";
+  remove.textContent = "x";
+  li.appendChild(remove);
+}
+
+for (let i = 0; i < listUl.children.length; i += 1) {
+  addLiBtn(listUl.children[i]);
+}
 
 // Add Items to list
 function addItem() {
@@ -44,24 +67,5 @@ btnAdd.addEventListener("click", () => {
 inputAdd.addEventListener("keyup", e => {
   if (e.keyCode == 13) {
     addItem();
-  }
-});
-
-// Add remove button to list items
-function addLiBtn(li) {
-  let remove = document.createElement("button");
-  remove.className = "remove";
-  remove.textContent = "x";
-  li.appendChild(remove);
-}
-
-// Removing Item from List
-listUl.addEventListener("click", e => {
-  if (e.target.tagName == "BUTTON") {
-    if (e.target.className == "remove") {
-      let li = event.target.parentNode;
-      let ul = li.parentNode;
-      ul.removeChild(li);
-    }
   }
 });
