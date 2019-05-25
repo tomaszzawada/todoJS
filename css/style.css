@@ -88,7 +88,13 @@ ul {
 }
 
 li {
-  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px;
   margin-bottom: 4px;
   background: var(--light-gray);
+}
+li > button {
+    margin-left: auto;
 }
