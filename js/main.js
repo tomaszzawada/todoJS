@@ -5,8 +5,9 @@ const inputAdd = document.querySelector("input.inputAdd");
 const btnAdd = document.querySelector("button.btnAdd");
 const listDiv = document.querySelector(".list");
 const listUl = document.querySelector(".ulList");
+const liSpan = listUl.getElementsByTagName("span");
 
-// Removing and traverse Item from List
+// Traverse Items
 listUl.addEventListener("click", e => {
   if (e.target.tagName == "BUTTON") {
     if (e.target.className == "remove") {
@@ -24,10 +25,43 @@ listUl.addEventListener("click", e => {
       let li = e.target.parentNode;
       let nextLi = li.nextElementSibling;
       let ul = li.parentNode;
-      if(nextLi) {
+      if (nextLi) {
         ul.insertBefore(nextLi, li);
       }
     }
+  }
+});
+
+// Edit Spans
+listDiv.addEventListener("click", e => {
+  if (e.target.tagName == "SPAN") {
+    let input = document.createElement("input");
+    let span = e.target;
+    let text = span.textContent;
+    const li = span.parentNode;
+    console.log(text);
+    span.style.display = "none";
+    input.value = text;
+    input.className = "liInput";
+    li.insertAdjacentElement("afterbegin", input);
+    input.focus();
+
+    document.addEventListener("click", e => {
+      const noEvent = '.liSpan, .nameSpan, .liInput';
+      if (!e.target.matches(noEvent)) {
+        span.textContent = input.value;
+        span.style.display = "inline";
+        input.remove();
+      }
+    });
+
+    input.addEventListener("keyup", e => {
+      if(e.keyCode == 13) {
+        span.textContent = input.value;
+        span.style.display = "inline";
+        input.remove();
+      }
+    });
   }
 });
 
@@ -36,6 +70,7 @@ function changeListName() {
   let value = inputListName.value;
   if (value.length > 0) {
     listName.innerHTML = value + ":";
+    inputListName.value = "";
   }
 }
 
@@ -75,7 +110,7 @@ function addItem() {
   let li = document.createElement("li");
   let value = inputAdd.value;
   if (value.length > 0) {
-    li.innerHTML = `<span>${value}</span>`;
+    li.innerHTML = `<span class="liSpan">${value}</span>`;
     addLiBtn(li);
     ul.appendChild(li);
     inputAdd.value = "";
