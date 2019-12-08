@@ -11,7 +11,7 @@ const liSpan = listUl.getElementsByTagName("span");
 listUl.addEventListener("click", e => {
   if (e.target.tagName == "BUTTON") {
     if (e.target.className == "remove") {
-      let li = event.target.parentNode;
+      let li = e.target.parentNode;
       let ul = li.parentNode;
       ul.removeChild(li);
     } else if (e.target.className == "up") {
